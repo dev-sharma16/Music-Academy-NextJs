@@ -16,7 +16,6 @@ export default function Home() {
         <InfiniteScrollCardSection/>
         <UpcomingWebniars/>
         <Insstructors/>
-        <Footer/>
       </main>
   );
 }
