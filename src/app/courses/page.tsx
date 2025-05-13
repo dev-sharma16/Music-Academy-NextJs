@@ -4,14 +4,20 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import courseData from "@/data/music_courses.json";
 
+interface Course{
+    id: number,
+    title: String,
+    description: String,
+    image: String,
+}
+
 export default function Courses(){
     return(
         <div className="min-h-screen bg-black py-12 pt-36">
            <h1 className="text-lg md:text-4xl text-center font-sans font-bold mb-8 text-white">All courses ({courseData.courses.length})</h1>  
            <div className="flex flex-wrap justify-center">
-            {/* TODO: make interface for course data type like on the mani home page */}
-              {courseData.courses.map((course)=>(
-                    <CardContainer className="inter-var mx-4">
+              {courseData.courses.map((course: Course)=>(
+                    <CardContainer key={course.id} className="inter-var mx-4">
                           <CardBody 
                                className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  "
                           >
